@@ -34,3 +34,29 @@ if (isset($_POST['submit'])) {
     echo 'Gagal mengonversi file txt!';
   }
 }
+
+if (isset($_POST['submitWeb'])) {
+  $fileNameInput = $_POST['fileNameInput'];
+  $textInput = $_POST['textInput'];
+
+  // Buat nama file dengan ekstensi .txt
+  $namafile = $fileNameInput . ".txt";
+
+  // Untuk menentukan path folder tujuan
+  $folder = "../public/file/";
+
+  // Gabungkan path folder dengan nama file
+  $pathfile = $folder . $namafile;
+
+  // Buka file untuk ditulis di path yang telah ditentukan
+  $file = fopen($pathfile, "w");
+
+  // Tulis teks ke file
+  if ($file) {
+    fwrite($file, $textInput);
+    fclose($file);
+    echo "<script>alert('File dengan $namafile berhasil dibuat'); window.location.href='../pengakses-file.php'</script>";
+  } else {
+    echo "Gagal membuat file.";
+  }
+}

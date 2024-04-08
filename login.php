@@ -35,11 +35,11 @@
 
 <body>
     <?php
-  include 'services/cek-login.php';
-  if (isset($_SESSION['username'])) {
-    header('Location: ../index.php');
-  }
-  ?>
+    include 'services/cek-login.php';
+    if (isset($_SESSION['username'])) {
+        header('Location: ../index.php');
+    }
+    ?>
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
@@ -52,10 +52,11 @@
                 <form class="login100-form validate-form" action="services/cek-login.php" method="post">
                     <div class="error-container">
                         <?php
-            if (isset($_GET['pesan'])) {
-            ?>
+                        if (isset($_GET['pesan'])) {
+                        ?>
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong>Login Gagal </strong><?php echo $_GET['pesan']; ?>
+                            <strong style="color: #372a00; font-weight:bold;">Login Gagal!
+                            </strong><?php echo $_GET['pesan']; ?>
                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                             </button>
                         </div>
@@ -65,8 +66,9 @@
 
                     <div class="wrap-input100 validate-input">
                         <input <?php if (isset($_SESSION['failed_login']) && $_SESSION['failed_login'] % 3 == 0) {
-                      echo 'disabled';
-                    } ?> class="input100" type="text" name="username" id="username" placeholder="username" />
+                                    echo 'disabled';
+                                } ?> class="input100" type="text" name="username" id="username"
+                            placeholder="username" />
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa-solid fa-user" style="color: #808080;"></i>
@@ -75,8 +77,8 @@
 
                     <div class="wrap-input100 validate-input">
                         <input <?php if (isset($_SESSION['failed_login']) && $_SESSION['failed_login'] % 3 == 0) {
-                      echo 'disabled';
-                    } ?> class="input100" type="password" name="pass" id="pass" placeholder="Password" />
+                                    echo 'disabled';
+                                } ?> class="input100" type="password" name="pass" id="pass" placeholder="Password" />
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa-solid fa-lock" style="color: #808080;"></i>
@@ -84,12 +86,12 @@
                     </div>
                     <div class="container-login100-form-btn mb-2" style="justify-content: space-between">
                         <button <?php if (isset($_SESSION['failed_login']) && $_SESSION['failed_login'] % 3 == 0) {
-                      echo 'disabled';
-                    } ?> type="submit" name="btnLogin" onclick="handleFailedLogin()"
+                                    echo 'disabled';
+                                } ?> type="submit" name="btnLogin" onclick="handleFailedLogin()"
                             class="login100-form-btn">Login</button>
                         <a href="index.php" <?php if (isset($_SESSION['failed_login']) && $_SESSION['failed_login'] % 3 == 0) {
-                                  echo 'disabled';
-                                } ?> type="submit" name="btnBatal" class="login100-form-btn">Batal</a>
+                                                echo 'disabled';
+                                            } ?> type="submit" name="btnBatal" class="login100-form-btn">Batal</a>
                     </div>
                     <div id="expiredContent"
                         class="text-center <?php echo isset($_SESSION['failed_login']) && $_SESSION['failed_login'] % 3 == 0 ? 'd-block' : 'd-none'; ?>">
