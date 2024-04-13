@@ -96,7 +96,7 @@
                     <div id="expiredContent"
                         class="text-center <?php echo isset($_SESSION['failed_login']) && $_SESSION['failed_login'] % 3 == 0 ? 'd-block' : 'd-none'; ?>">
                         <p class="txt2">
-                            Login kembali setelah <span id="expiredText">10</span> detik
+                            Login kembali setelah <span id="expiredText">20</span> detik
                         </p>
                     </div>
                 </form>
