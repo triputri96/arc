@@ -190,16 +190,16 @@ function setFooterContacts() {
   });
 }
 
-//pengakses file
-function saveToFile() {
-  var textContent = document.getElementById("textInput").value;
-  var fileName = document.getElementById("fileNameInput").value;
+// pengakses file
+// function saveToFile() {
+//   var textContent = document.getElementById("textInput").value;
+//   var fileName = document.getElementById("fileNameInput").value;
 
-  var blob = new Blob([textContent], {
-    type: "text/plain",
-  });
-  var link = document.createElement("a");
-  link.href = window.URL.createObjectURL(blob);
-  link.download = fileName;
-  link.click();
-}
+//   var blob = new Blob([textContent], {
+//     type: "text/plain",
+//   });
+//   var link = document.createElement("a");
+//   link.href = window.URL.createObjectURL(blob);
+//   link.download = fileName;
+//   link.click();
+// }
