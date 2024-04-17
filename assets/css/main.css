@@ -42,7 +42,7 @@ body {
 /* navbar */
 nav {
   background-color: var(--primary-color);
-  padding: 16px 100px;
+  padding: 25px 100px;
   position: fixed;
   z-index: 9;
   animation: top 0.4s ease-in;

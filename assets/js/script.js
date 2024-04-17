@@ -121,22 +121,35 @@ function sortOutput(isAsc) {
   }
 }
 
+// input array
+// Fungsi untuk menambahkan konten dari input ke dalam daftar dan menampilkannya di outputField
 function insertContent() {
+  // Mendapatkan elemen input dari DOM
   const content = document.getElementById("content");
+  // Mendapatkan elemen outputField dari DOM
   const outputField = document.getElementById("outputField");
+  // Membuat elemen span baru untuk menampilkan konten
   let span = document.createElement("span");
 
+  // Menambahkan nilai input ke array contents
   contents.push(content.value);
 
+  // Menyimpan teks input ke dalam elemen span
   span.innerText = content.value;
+  // Menambahkan kelas CSS d-block ke elemen span
   span.classList.add("d-block");
+  // Menambahkan elemen span ke outputField
   outputField.appendChild(span);
 
+  // Mengosongkan input setelah teks ditambahkan
   content.value = "";
 }
 
+// Fungsi untuk menangani peristiwa keydown pada input
 function onKeyDown(event) {
+  // Jika tombol yang ditekan adalah Enter (keyCode 13)
   if (event.keyCode == 13) {
+    // Panggil fungsi insertContent() untuk menambahkan konten
     insertContent();
   }
 }

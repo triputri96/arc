@@ -3,13 +3,11 @@ include 'partials/header.php';
 include 'partials/navbar.php';
 ?>
 <style>
-#outputField {
-    max-height: 200px;
-    /* Atur tinggi maksimum di sini */
-    overflow-y: auto;
-    /* Gunakan "auto" untuk menampilkan scrollbar hanya ketika diperlukan */
-    padding: 20px 0 10px 20px;
-}
+    #outputField {
+        max-height: 200px;
+        overflow-y: auto;
+        padding: 20px 0 10px 20px;
+    }
 </style>
 
 <section id="inputArraySection" class="h-v-full d-flex align-center justify-content-center">
